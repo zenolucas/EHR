@@ -1,0 +1,36 @@
+package ui
+
+templ Navigation() {
+	<div class="navbar h-20 bg-base-content">
+		<div class="flex-none">
+			<i class="fa-solid fa-bars fa-xl ml-8" style="color: #ffffff;"></i>
+		</div>
+		<div class="flex-1">
+			<a href="/home" class="btn btn-ghost text-white text-xl">Sol'n Teacher Portal</a>
+		</div>
+		<div class="flex-none">
+			<div class="dropdown dropdown-end">
+				<div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar mr-[20px]">
+					<div class="w-10 rounded-full">
+						<img
+							alt="Tailwind CSS Navbar component"
+							src="/public/images/bg/sample_user.png"
+						/>
+					</div>
+				</div>
+				<ul
+					tabindex="0"
+					class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+				>
+					<li>@LogoutForm()</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+}
+
+templ LogoutForm() {
+	<form method="POST" action="/logout">
+		<li><button type="submit" class="btn btn-link">Logout</button></li>
+	</form>
+}

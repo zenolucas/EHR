@@ -1,0 +1,4 @@
+node_modules
+*.json
+*_templ.go*
+*_templ.txt*

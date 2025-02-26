@@ -2,6 +2,7 @@ package main
 
 import (
 	"EHR/database"
+	"EHR/handler"
 	"embed"
 	"log"
 	"log/slog"
@@ -20,6 +21,7 @@ func main() {
 
 	router := chi.NewMux()
 	router.Handle("/*", http.StripPrefix("/", http.FileServer(http.FS(FS))))
+	router.Get("/", handler.Make(handler.HandleHomeIndex))
 
 	port := ":3000" 
 	slog.Info("application running", "port", port)
